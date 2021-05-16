@@ -1,10 +1,13 @@
 import React from 'react';
 import socket from '../socket';
 
+
+
 function Chat({ users, messages, userName, roomId, onAddMessage }) {
   const [messageValue, setMessageValue] = React.useState('');
   const messagesRef = React.useRef(null);
 
+/* Sending message in the room */
   const onSendMessage = () => {
     socket.emit('ROOM:NEW_MESSAGE', {
       userName,
@@ -14,11 +17,12 @@ function Chat({ users, messages, userName, roomId, onAddMessage }) {
     onAddMessage({ userName, text: messageValue });
     setMessageValue('');
   };
-
+/* Scroll */
   React.useEffect(() => {
     messagesRef.current.scrollTo(0, 99999);
   }, [messages]);
 
+/* Data to DOM */
   return (
     <div className="chat">
       <div className="chat-users">
@@ -42,6 +46,8 @@ function Chat({ users, messages, userName, roomId, onAddMessage }) {
             </div>
           ))}
         </div>
+        
+        /* Area to the chat text */
         <form>
           <textarea
             value={messageValue}

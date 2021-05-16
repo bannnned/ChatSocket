@@ -6,6 +6,7 @@ function JoinBlock({ onLogin }) {
   const [userName, setUserName] = React.useState('');
   const [isLoading, setLoading] = React.useState(false);
 
+/* Checking for the correct fill and login into the room */
   const onEnter = async () => {
     if (!roomId || !userName) {
       return alert('Incorrect room or username');
@@ -19,6 +20,7 @@ function JoinBlock({ onLogin }) {
     onLogin(obj);
   };
 
+/* Joining to room DOM */
   return (
     <div className="join-block">
       <input

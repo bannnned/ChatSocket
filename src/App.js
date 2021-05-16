@@ -7,6 +7,8 @@ import reducer from './reducer';
 import JoinBlock from './components/JoinBlock';
 import Chat from './components/Chat';
 
+
+
 function App() {
   const [state, dispatch] = React.useReducer(reducer, {
     joined: false,

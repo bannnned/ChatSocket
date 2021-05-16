@@ -5,6 +5,8 @@ import App from './App';
 
 import './index.css';
 
+/* Sending body to DOM */
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
